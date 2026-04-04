@@ -15,3 +15,5 @@ cp -r /dist or build/* /var/www/html/
 
 # restart nginx
 systemctl restart nginx
+
+
