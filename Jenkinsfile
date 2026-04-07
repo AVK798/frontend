@@ -1,7 +1,7 @@
 pipeline {
     agent {
 
-    label "NODEJS"
+    label "NODES"
     }
     stages {
         stage ('make artificats') {
