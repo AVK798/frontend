@@ -15,6 +15,7 @@ pipeline {
         steps {
          sh'''
             curl -v -u admin:nexus123 --upload-file frontend.zip  http://3.229.118.28:8081/repository/frontend/frontend.zip
+
          '''
         }
      }
