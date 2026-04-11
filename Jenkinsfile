@@ -24,10 +24,10 @@
 
 @Library('Todo-App') _
 
-todo {
+todo (
 
-   Service :'frontend',
+   Service : 'frontend',
    Slave   : 'JAVA',
    App_type: 'Nginx'
 
-}
+)
