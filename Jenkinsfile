@@ -27,5 +27,4 @@ todo (
    Service : 'frontend',
    Slave   : 'JAVA',
    App_type: 'Nginx'
-
 )
