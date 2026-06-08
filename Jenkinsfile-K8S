@@ -1,0 +1,31 @@
+pipeline {
+    agent {
+        label "K8S"
+    }
+
+    parameters {
+        choice(name: 'ENV', choices: ['dev', 'prod' ], description: 'Select Environment')
+        string(name: 'VERSION', defaultValue: '', description: 'Which Version of Component to deploy')
+    }
+
+    stages {
+
+        stage('Deploy to DEV Env') {
+            steps {
+                withCredentials([
+                    file(credentialsId: 'kubeconfig',
+                         variable: 'KUBECONFIG')
+                ]) {
+                sh '''
+                    helm upgrade -i frontend helm/. --set image.tag=${VERSION}
+                    
+                  '''
+                }
+            }
+
+        }
+    }
+}
+
+
+// --set image.tag=${VERSION}
